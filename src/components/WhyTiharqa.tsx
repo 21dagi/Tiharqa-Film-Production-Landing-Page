@@ -30,10 +30,41 @@ export function WhyTiharqa() {
     <section
       id="why-tiharqa"
       aria-labelledby="why-title"
-      className="relative w-full max-w-full overflow-hidden bg-white pt-4 pb-14 sm:pt-8 sm:pb-20 lg:pt-12 lg:pb-24"
+      className="relative w-full max-w-full overflow-x-clip bg-white pt-4 pb-14 sm:pt-8 sm:pb-20 lg:pt-12 lg:pb-24"
     >
       <div className="container-x grid gap-8 lg:grid-cols-12 lg:gap-14 xl:gap-20">
-        {/* Content Column: Order 1 on mobile (so heading is immediately visible without white gap), Order 2 on desktop */}
+        {/* Sticky Visual Column on Desktop (Order 1 on desktop, Order 2 on mobile) */}
+        <div className="order-2 min-w-0 lg:order-1 lg:col-span-5 lg:self-start lg:sticky lg:top-28">
+          <Reveal variant="left">
+            <div className="relative mx-auto max-w-md pb-4 pl-4 sm:pb-5 sm:pl-5 lg:max-w-none">
+              <div aria-hidden="true" className="absolute bottom-0 left-0 h-3/4 w-3/4 border-2 border-signal" />
+              <div className="cut-tr relative aspect-4/5 bg-navy [--cut:48px] sm:[--cut:72px]">
+                <img
+                  src={IMAGES.why.src}
+                  srcSet={IMAGES.why.srcSet}
+                  sizes="(min-width: 1024px) 40vw, 90vw"
+                  width={IMAGES.why.width}
+                  height={IMAGES.why.height}
+                  alt={IMAGES.why.alt}
+                  loading="lazy"
+                  decoding="async"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <div aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-navy/80 via-navy/10 to-navy/25" />
+                <div className="absolute bottom-0 left-0 max-w-[88%] border-l-4 border-signal bg-white py-3 pr-5 pl-3.5 sm:py-4 sm:pr-8 sm:pl-5">
+                  <p className="font-display text-[0.62rem] font-bold tracking-[0.22em] text-navy/70 uppercase sm:text-[0.65rem]">
+                    Our Promise
+                  </p>
+                  <p className="mt-1 font-display text-base leading-tight font-extrabold text-navy sm:text-xl">
+                    Stories That Move. Cinema That Connects.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+
+        {/* Content Column (Order 1 on mobile, Order 2 on desktop) */}
         <div className="order-1 min-w-0 max-w-full lg:order-2 lg:col-span-7">
           <SectionHeading
             index="03"
@@ -121,7 +152,7 @@ export function WhyTiharqa() {
             </div>
           </div>
 
-          {/* DESKTOP ANIMATED LIST (lg:block) */}
+          {/* DESKTOP ANIMATED LIST (lg:block) - Scrolls past sticky image */}
           <ol className="mt-10 hidden border-b border-navy/12 lg:block">
             {WHY_ITEMS.map((item, i) => (
               <Reveal as="li" key={item.title} delay={i * 45} className="group relative">
@@ -157,35 +188,6 @@ export function WhyTiharqa() {
             </a>
           </Reveal>
         </div>
-
-        {/* Visual Column: Order 2 on mobile, Order 1 on desktop */}
-        <Reveal variant="left" className="order-2 min-w-0 max-w-full lg:order-1 lg:col-span-5 lg:self-start lg:sticky lg:top-28">
-          <div className="relative mx-auto max-w-md pb-4 pl-4 sm:pb-5 sm:pl-5 lg:max-w-none">
-            <div aria-hidden="true" className="absolute bottom-0 left-0 h-3/4 w-3/4 border-2 border-signal" />
-            <div className="cut-tr relative aspect-4/5 bg-navy [--cut:48px] sm:[--cut:72px]">
-              <img
-                src={IMAGES.why.src}
-                srcSet={IMAGES.why.srcSet}
-                sizes="(min-width: 1024px) 40vw, 90vw"
-                width={IMAGES.why.width}
-                height={IMAGES.why.height}
-                alt={IMAGES.why.alt}
-                loading="lazy"
-                decoding="async"
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-              <div aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-navy/80 via-navy/10 to-navy/25" />
-              <div className="absolute bottom-0 left-0 max-w-[88%] border-l-4 border-signal bg-white py-3 pr-5 pl-3.5 sm:py-4 sm:pr-8 sm:pl-5">
-                <p className="font-display text-[0.62rem] font-bold tracking-[0.22em] text-navy/70 uppercase sm:text-[0.65rem]">
-                  Our Promise
-                </p>
-                <p className="mt-1 font-display text-base leading-tight font-extrabold text-navy sm:text-xl">
-                  Stories That Move. Cinema That Connects.
-                </p>
-              </div>
-            </div>
-          </div>
-        </Reveal>
       </div>
     </section>
   );

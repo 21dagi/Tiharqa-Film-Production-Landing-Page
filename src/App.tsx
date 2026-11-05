@@ -39,7 +39,7 @@ export default function App() {
         Skip to main content
       </a>
       <Navbar />
-      <main id="main" tabIndex={-1} className="w-full max-w-full overflow-x-hidden outline-none">
+      <main id="main" tabIndex={-1} className="w-full max-w-full outline-none">
         <Hero />
         <TrustStrip />
         <ProducedFilms onSelectFilm={pickService} />
