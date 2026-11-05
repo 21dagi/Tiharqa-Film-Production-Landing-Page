@@ -285,8 +285,8 @@ export function ProducedFilms({ onSelectFilm }: Props) {
                     }
                   }}
                 >
-                  {/* 3:4 Cinematic Poster Container (Proportionately compact) */}
-                  <div className="relative aspect-3/4 w-full overflow-hidden bg-navy">
+                  {/* 4:5 Cinematic Poster Container (Further compact height) */}
+                  <div className="relative aspect-4/5 w-full overflow-hidden bg-navy">
                     <img
                       src={film.poster}
                       alt={`${film.title} (${film.amharicTitle}) movie poster`}
@@ -318,36 +318,36 @@ export function ProducedFilms({ onSelectFilm }: Props) {
                     </div>
 
                     {/* Bottom poster overlay info */}
-                    <div className="absolute right-0 bottom-0 left-0 p-4 sm:p-4.5 text-white">
-                      <p className="font-display text-[0.68rem] font-bold tracking-widest text-signal uppercase sm:text-xs">
+                    <div className="absolute right-0 bottom-0 left-0 p-3.5 sm:p-4 text-white">
+                      <p className="font-display text-[0.65rem] font-bold tracking-widest text-signal uppercase sm:text-xs">
                         {film.amharicTitle}
                       </p>
-                      <h3 className="mt-0.5 font-display text-lg font-extrabold tracking-tight text-white drop-shadow-sm sm:mt-1 sm:text-xl lg:text-2xl">
+                      <h3 className="mt-0.5 font-display text-base font-extrabold tracking-tight text-white drop-shadow-sm sm:text-lg lg:text-xl">
                         {film.title}
                       </h3>
-                      <div className="mt-1.5 flex items-center gap-2.5 text-xs text-white/80 sm:mt-2">
-                        <span className="inline-flex items-center gap-1 text-[0.7rem] sm:text-xs">
+                      <div className="mt-1 flex items-center gap-2 text-xs text-white/80 sm:mt-1.5">
+                        <span className="inline-flex items-center gap-1 text-[0.68rem] sm:text-xs">
                           <Clock className="size-3 text-signal" aria-hidden="true" />
                           {film.runtime}
                         </span>
                         <span>•</span>
-                        <span className="truncate text-[0.7rem] sm:text-xs">{film.status}</span>
+                        <span className="truncate text-[0.68rem] sm:text-xs">{film.status}</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Bottom card action strip */}
-                  <div className="flex flex-1 flex-col justify-between border-t border-navy/10 bg-white p-4 sm:p-4.5">
+                  <div className="flex flex-1 flex-col justify-between border-t border-navy/10 bg-white p-3.5 sm:p-4">
                     <p className="line-clamp-2 text-xs leading-relaxed text-navy/75">
                       {film.synopsis}
                     </p>
 
-                    <div className="mt-3 flex items-center justify-between border-t border-navy/10 pt-2.5 sm:mt-3.5">
-                      <span className="inline-flex items-center gap-1 text-[0.7rem] font-semibold text-navy/60 sm:text-[0.72rem]">
+                    <div className="mt-2.5 flex items-center justify-between border-t border-navy/10 pt-2 sm:mt-3">
+                      <span className="inline-flex items-center gap-1 text-[0.68rem] font-semibold text-navy/60 sm:text-[0.72rem]">
                         <Award className="size-3.5 text-signal" aria-hidden="true" />
                         Acclaimed
                       </span>
-                      <span className="inline-flex items-center gap-1 font-display text-[0.68rem] font-bold tracking-wider text-signal uppercase transition-transform duration-300 group-hover:translate-x-1 sm:text-xs">
+                      <span className="inline-flex items-center gap-1 font-display text-[0.65rem] font-bold tracking-wider text-signal uppercase transition-transform duration-300 group-hover:translate-x-1 sm:text-xs">
                         Explore film
                         <ArrowRight className="size-3.5" aria-hidden="true" />
                       </span>
