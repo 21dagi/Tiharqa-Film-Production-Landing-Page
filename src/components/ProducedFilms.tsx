@@ -285,8 +285,8 @@ export function ProducedFilms({ onSelectFilm }: Props) {
                     }
                   }}
                 >
-                  {/* 2:3 Cinematic Poster Container */}
-                  <div className="relative aspect-2/3 w-full overflow-hidden bg-navy">
+                  {/* 3:4 Cinematic Poster Container (Proportionately compact) */}
+                  <div className="relative aspect-3/4 w-full overflow-hidden bg-navy">
                     <img
                       src={film.poster}
                       alt={`${film.title} (${film.amharicTitle}) movie poster`}
@@ -301,53 +301,53 @@ export function ProducedFilms({ onSelectFilm }: Props) {
                     />
 
                     {/* Top badges */}
-                    <div className="absolute top-3 right-3 left-3 flex items-center justify-between gap-2">
-                      <span className="bg-signal px-2.5 py-1 font-display text-[0.65rem] font-bold tracking-widest text-white uppercase shadow-xs">
+                    <div className="absolute top-2.5 right-2.5 left-2.5 flex items-center justify-between gap-2 sm:top-3 sm:right-3 sm:left-3">
+                      <span className="bg-signal px-2 py-0.5 font-display text-[0.62rem] font-bold tracking-widest text-white uppercase shadow-xs sm:px-2.5 sm:py-1 sm:text-[0.65rem]">
                         {film.genre.split("/")[0].trim()}
                       </span>
-                      <span className="border border-white/30 bg-navy/70 px-2 py-0.5 font-display text-[0.68rem] font-semibold text-white/90 backdrop-blur-xs">
+                      <span className="border border-white/30 bg-navy/70 px-2 py-0.5 font-display text-[0.65rem] font-semibold text-white/90 backdrop-blur-xs sm:text-[0.68rem]">
                         {film.year}
                       </span>
                     </div>
 
                     {/* Center hover play overlay */}
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                      <span className="grid size-14 place-items-center rounded-full border-2 border-white/80 bg-navy/80 text-white shadow-xl backdrop-blur-md transition-transform duration-300 group-hover:scale-110">
-                        <Play className="ml-1 size-6 fill-white text-white" aria-hidden="true" />
+                      <span className="grid size-12 sm:size-14 place-items-center rounded-full border-2 border-white/80 bg-navy/80 text-white shadow-xl backdrop-blur-md transition-transform duration-300 group-hover:scale-110">
+                        <Play className="ml-0.5 size-5 sm:size-6 fill-white text-white" aria-hidden="true" />
                       </span>
                     </div>
 
                     {/* Bottom poster overlay info */}
-                    <div className="absolute right-0 bottom-0 left-0 p-5 text-white">
-                      <p className="font-display text-xs font-bold tracking-widest text-signal uppercase">
+                    <div className="absolute right-0 bottom-0 left-0 p-4 sm:p-4.5 text-white">
+                      <p className="font-display text-[0.68rem] font-bold tracking-widest text-signal uppercase sm:text-xs">
                         {film.amharicTitle}
                       </p>
-                      <h3 className="mt-1 font-display text-xl font-extrabold tracking-tight text-white drop-shadow-sm sm:text-2xl">
+                      <h3 className="mt-0.5 font-display text-lg font-extrabold tracking-tight text-white drop-shadow-sm sm:mt-1 sm:text-xl lg:text-2xl">
                         {film.title}
                       </h3>
-                      <div className="mt-2.5 flex items-center gap-3 text-xs text-white/80">
-                        <span className="inline-flex items-center gap-1">
+                      <div className="mt-1.5 flex items-center gap-2.5 text-xs text-white/80 sm:mt-2">
+                        <span className="inline-flex items-center gap-1 text-[0.7rem] sm:text-xs">
                           <Clock className="size-3 text-signal" aria-hidden="true" />
                           {film.runtime}
                         </span>
                         <span>•</span>
-                        <span className="truncate">{film.status}</span>
+                        <span className="truncate text-[0.7rem] sm:text-xs">{film.status}</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Bottom card action strip */}
-                  <div className="flex flex-1 flex-col justify-between border-t border-navy/10 bg-white p-5">
+                  <div className="flex flex-1 flex-col justify-between border-t border-navy/10 bg-white p-4 sm:p-4.5">
                     <p className="line-clamp-2 text-xs leading-relaxed text-navy/75">
                       {film.synopsis}
                     </p>
 
-                    <div className="mt-4 flex items-center justify-between border-t border-navy/10 pt-3">
-                      <span className="inline-flex items-center gap-1 text-[0.72rem] font-semibold text-navy/60">
+                    <div className="mt-3 flex items-center justify-between border-t border-navy/10 pt-2.5 sm:mt-3.5">
+                      <span className="inline-flex items-center gap-1 text-[0.7rem] font-semibold text-navy/60 sm:text-[0.72rem]">
                         <Award className="size-3.5 text-signal" aria-hidden="true" />
                         Acclaimed
                       </span>
-                      <span className="inline-flex items-center gap-1 font-display text-xs font-bold tracking-wider text-signal uppercase transition-transform duration-300 group-hover:translate-x-1">
+                      <span className="inline-flex items-center gap-1 font-display text-[0.68rem] font-bold tracking-wider text-signal uppercase transition-transform duration-300 group-hover:translate-x-1 sm:text-xs">
                         Explore film
                         <ArrowRight className="size-3.5" aria-hidden="true" />
                       </span>
