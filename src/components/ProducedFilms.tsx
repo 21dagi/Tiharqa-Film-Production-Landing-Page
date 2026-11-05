@@ -118,8 +118,8 @@ export function ProducedFilms({ onSelectFilm }: Props) {
   };
 
   return (
-    <section id="films" aria-labelledby="films-title" className="relative bg-mist py-20 sm:py-28">
-      <div className="container-x">
+    <section id="films" aria-labelledby="films-title" className="relative w-full max-w-full overflow-hidden bg-mist py-16 sm:py-24 lg:py-28">
+      <div className="container-x lg:max-w-[86rem] xl:max-w-[90rem]">
         {/* Header with Title & Intro */}
         <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
           <SectionHeading
@@ -265,7 +265,7 @@ export function ProducedFilms({ onSelectFilm }: Props) {
             {filteredFilms.map((film, idx) => (
               <div
                 key={film.id}
-                className="w-[84vw] min-w-[280px] max-w-[320px] sm:w-[330px] sm:min-w-[330px] md:w-[350px] md:min-w-[350px] lg:w-[360px] lg:min-w-[360px] shrink-0 snap-start"
+                className="w-[84vw] min-w-[280px] max-w-[320px] sm:w-[330px] sm:min-w-[330px] md:w-[350px] md:min-w-[350px] lg:w-[365px] lg:min-w-[365px] xl:w-[380px] xl:min-w-[380px] shrink-0 snap-start"
               >
                 <div
                   className="group cut-tr relative flex h-full flex-col overflow-hidden border border-navy/15 bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-signal hover:shadow-[0_20px_35px_-10px_rgba(6,6,48,0.22)] [--cut:32px]"
