@@ -255,30 +255,6 @@ export function ProducedFilms({ onSelectFilm }: Props) {
 
         {/* Horizontal Scrollable Film Reel Viewport */}
         <div className="relative mt-6">
-          {/* Left Fade Edge */}
-          {canScrollLeft && (
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute top-0 bottom-6 left-0 z-10 hidden sm:flex w-14 items-center justify-start bg-linear-to-r from-mist via-mist/80 to-transparent pl-1"
-            >
-              <div className="grid size-8 place-items-center rounded-full bg-white/90 text-navy shadow-sm">
-                <ChevronLeft className="size-4" />
-              </div>
-            </div>
-          )}
-
-          {/* Right Fade Edge with motion cue */}
-          {canScrollRight && (
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute top-0 right-0 bottom-6 z-10 hidden sm:flex w-16 items-center justify-end bg-linear-to-l from-mist via-mist/80 to-transparent pr-1"
-            >
-              <div className="grid size-8 place-items-center rounded-full bg-signal text-white shadow-md animate-pulse">
-                <ChevronRight className="size-4" />
-              </div>
-            </div>
-          )}
-
           <div
             ref={scrollRef}
             onScroll={checkScroll}
